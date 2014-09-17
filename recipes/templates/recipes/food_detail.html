@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Recipes {% endblock %}
+<!-- Bootstrap -->
+
+{% block content %}
+<h1>{{object}}</h1>
+<ul>
+<p><a href="{% url food-list %}">Back to food list</a></li></p>
+<li><p>{{object.id}}</p></li>
+<li><p>{{object.name}}</p></li>
+</ul>
+{% endblock %}

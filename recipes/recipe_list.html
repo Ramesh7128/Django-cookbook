@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Recipess-List{% endblock %}
+
+{% block content %}
+<h1>Recipe list</h1>
+<ul>
+{% for object in object_list %}
+<li><a href="{% url recipe-detail object.slug %}">{{object.recipe}}</a></li>
+{% endfor %}
+
+</ul>
+
+<a href="{% url recipe-create %}" class="btn btn-primary">Add new recipe</a>
+
+{% endblock %}
