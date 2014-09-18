@@ -6,7 +6,7 @@
 <h1>Recipe-List</h1>
 <ul>
 {% for object in object_list %}
-<li><a href="{% url recipe-detail object.slug %}">{{ object }}</a></li>
+<li><a href="{% url recipe-detail object.slug %}">{{ object }}</a><a href="{% url recipe-delete object.slug %}"><i class="icon-remove"></i></a></li>
 <p><a href="{% url ingredient-create object.slug %}">Add ingredient</a></p>
 {% endfor %}
 </ul>

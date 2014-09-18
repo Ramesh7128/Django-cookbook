@@ -6,7 +6,8 @@
 <h1>Food list</h1>
 <ul>
 {% for object in object_list %}
-<li><a href="{% url food-detail object.id %}">{{ object }}</a></li>
+<li><a href="{% url food-detail object.id %}">{{ object }}</a><a href="{% url food-delete object.id %}"><i class="icon-remove"></i></a></li>
+
 {% endfor %}
 </ul>
 

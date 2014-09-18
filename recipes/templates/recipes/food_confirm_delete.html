@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Food item{% endblock %}
+
+{% block content %}
+<h1>Delete Food item</h1>
+
+<h2>Really delete {{ object }} from Food?</h2>
+
+<p>It will be permanently lost</p>
+
+<form method="post">{% csrf_token %}
+    <button class="btn btn-primary" type="submit">Delete</button>
+</form>
+<a class="btn" href="{% url food-detail object.id %}">Cancel</a>
+{% endblock %}

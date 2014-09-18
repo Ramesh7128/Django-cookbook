@@ -12,6 +12,13 @@ class FoodDetailView(DetailView):
 class FoodCreateView(CreateView):
 	model = Food
 
+class FoodDeleteView(DeleteView):
+	model = Food
+
+	def get_success_url(self):
+		return reverse('food-list', args=())
+
+
 class RecipeListView(ListView):
 	model = Recipe
 
@@ -24,6 +31,12 @@ class RecipeDetailView(DetailView):
 class RecipeUpdateView(UpdateView):
 	model = Recipe
 	template_name = 'recipes/recipe_update_form.html'
+
+class RecipeDeleteView(DeleteView):
+	model = Recipe
+
+	def get_success_url(self):
+		return reverse('recipe-list', args=())
 
 class IngredientCreateView(CreateView):
 	model = Ingredient
